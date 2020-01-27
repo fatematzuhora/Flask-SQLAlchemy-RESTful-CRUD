@@ -1,6 +1,6 @@
 from app import app
 
-from app.models import Book, Category
+from app.models import Author, Book, Category
 from flask_marshmallow import Marshmallow
 
 
@@ -20,10 +20,22 @@ categories_schema = CategorySchema(many=True)
 
 
 
+class AuthorSchema(ma.ModelSchema):
+    class Meta:
+        model = Author
+        fields = ('id', 'name', 'about') # fields to expose
+
+
+author_schema = AuthorSchema()
+authors_schema = AuthorSchema(many=True)
+
+
+
+
 class BookSchema(ma.ModelSchema):
     class Meta:
         model = Book
-        fields = ('id', 'name', 'tagline', 'short_desc', 'is_published', 'category_id') # fields to expose
+        fields = ('uuid', 'name', 'tagline', 'short_desc', 'is_published', 'category_id', 'author_id') # fields to expose
 
 
 book_schema = BookSchema()
