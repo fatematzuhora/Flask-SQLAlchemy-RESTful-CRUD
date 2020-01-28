@@ -1,5 +1,36 @@
-# Flask-SQLAlchemy-CRUD-RESTful-API
-Simple CRUD RESTful API application using Flask &amp; SQLAlchemy
+# Flask-SQLAlchemy-RESTful-CRUD
+[![Build Status](https://travis-ci.org/fatematzuhora/Flask-SQLAlchemy-RESTful-CRUD.svg?branch=master)](https://travis-ci.org/fatematzuhora/Flask-SQLAlchemy-RESTful-CRUD) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django.svg)
+
+Simple RESTful CRUD API application using [Flask](http://flask.pocoo.org) & [SQLAlchemy](http://www.sqlalchemy.org), and connecting the both using [Flask-SQLAlchemy](http://flask-sqlalchemy.pocoo.org) library.
+
+
+
+### Getting started
+At first you'll need to get the source code of the project. Do this by cloning the Flask-SQLAlchemy-RESTful-CRUD repository.
+
+```
+# get the project code
+$ git clone https://github.com/fatematzuhora/Flask-SQLAlchemy-RESTful-CRUD.git
+$ cd Flask-SQLAlchemy-RESTful-CRUD
+```
+
+Create a virtual environment for this project and install dependencies
+```
+# create a virtualenv in which we can install the dependencies
+$ virtualenv .venv
+$ source .venv/bin/activate
+```
+
+```
+pip install -r requirements.txt
+```
+
+### Running the App
+
+```
+$ python app.py
+```
+
 
 
 # Sample .env File

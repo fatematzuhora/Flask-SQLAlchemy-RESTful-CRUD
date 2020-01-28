@@ -15,6 +15,9 @@ def generate_uuid():
 model classes
 =============
 """
+# See http://flask-sqlalchemy.pocoo.org/2.0/models/#simple-example
+# for details on the column types.
+
 class Book(db.Model):
     __tablename__ = "books"
 
