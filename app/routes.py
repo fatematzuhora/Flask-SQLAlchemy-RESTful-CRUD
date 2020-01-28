@@ -313,7 +313,7 @@ def get_books():
 
 
 # endpoint to GET book detail by uuid
-@app.route("/book/<int:uuid>", methods=["GET"])
+@app.route("/book/<path:uuid>", methods=["GET"])
 def get_book(uuid):
 
     book = Book.query.get(uuid)
@@ -324,6 +324,67 @@ def get_book(uuid):
             'message': 'Book Info!',
             'status': 200,
             'data': result
+        }
+    else:
+        data = {
+            'message': 'Invalid Book ID!',
+            'status': 200
+        }
+    return make_response(jsonify(data))
+
+
+
+# endpoint to UPDATE book
+@app.route("/book/<path:uuid>", methods=["PATCH"])
+def update_book(uuid):
+
+    book = Book.query.get(uuid)
+
+    if(book):
+        if 'name' in request.json:
+            book.name = request.json['name']
+        if 'short_desc' in request.json:
+            book.short_desc = request.json['short_desc']
+        if 'tagline' in request.json:
+            book.tagline = request.json['tagline']
+        if 'is_published' in request.json:
+            book.is_published = request.json['is_published']
+        if 'category_id' in request.json:
+            book.category_id = request.json['category_id']
+        if 'author_id' in request.json:
+            book.author_id = request.json['author_id']
+
+        db.session.commit()
+        result = book_schema.dump(book)
+        
+        data = {
+            'message': 'Book Info Edited!',
+            'status': 200,
+            'data': result
+        }
+
+    else:
+        data = {
+            'message': 'Invalid Book ID!',
+            'status': 200
+        }
+    return make_response(jsonify(data))
+
+
+
+# endpoint to DELETE author
+@app.route("/book/<path:uuid>", methods=["DELETE"])
+def delete_book(uuid):
+
+    book = Book.query.get(uuid)
+
+    if(book):
+        db.session.delete(book)
+        db.session.commit()
+
+        data = {
+            'message': 'Book Deleted!',
+            'status': 200
         }
     else:
         data = {

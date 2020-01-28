@@ -12,6 +12,6 @@ class Config(object):
     DEBUG = environ.get('DEBUG')
     SECRET_KEY = environ.get('SECRET_KEY')
 
-    # database
+    # sqlalchemy
     SQLALCHEMY_DATABASE_URI = environ.get('SQLALCHEMY_DATABASE_URI') or 'sqlite:///' + path.join(BASE_DIR, 'db.sqlite')
     SQLALCHEMY_TRACK_MODIFICATIONS = environ.get('SQLALCHEMY_TRACK_MODIFICATIONS')

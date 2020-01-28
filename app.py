@@ -1,8 +1,9 @@
 """
 main module of the server file
 """
-from app import app, db
 from config import Config
+from app import app, db
+
 
 
 if __name__ == '__main__':

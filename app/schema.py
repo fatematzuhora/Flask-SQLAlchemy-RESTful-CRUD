@@ -7,7 +7,11 @@ from flask_marshmallow import Marshmallow
 ma = Marshmallow(app)
 
 
-# schema
+"""
+=============
+schema classes
+=============
+"""
 class CategorySchema(ma.ModelSchema):
     class Meta:
         model = Category

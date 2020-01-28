@@ -5,12 +5,16 @@ import datetime
 
 
 
-
+# method to generate uuid
 def generate_uuid():
     return str(uuid4())
 
 
-# models
+"""
+=============
+model classes
+=============
+"""
 class Book(db.Model):
     __tablename__ = "books"
 
