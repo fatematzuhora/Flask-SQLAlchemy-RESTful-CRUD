@@ -4,7 +4,6 @@ from uuid import uuid4
 import datetime
 
 
-
 # method to generate uuid
 def generate_uuid():
     return str(uuid4())

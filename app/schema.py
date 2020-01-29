@@ -12,6 +12,7 @@ ma = Marshmallow(app)
 schema classes
 =============
 """
+
 class CategorySchema(ma.ModelSchema):
     class Meta:
         model = Category
