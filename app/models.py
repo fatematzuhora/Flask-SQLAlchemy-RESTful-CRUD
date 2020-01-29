@@ -1,12 +1,19 @@
 from app import db
+from sqlalchemy_utils import ChoiceType
 
 from uuid import uuid4
-import datetime
+import datetime, enum
 
 
 # method to generate uuid
 def generate_uuid():
     return str(uuid4())
+
+
+class BookIsPublishedEnum(enum.Enum):
+    yes = True
+    no = False
+
 
 
 """
@@ -24,7 +31,12 @@ class Book(db.Model):
     name = db.Column(db.String(255), nullable=False)
     tagline = db.Column(db.String(255), nullable=False)
     short_desc = db.Column(db.Text())
-    is_published = db.Column(db.Boolean(), nullable=False, default=False)
+    is_published = db.Column(
+        db.Boolean(),
+        ChoiceType(BookIsPublishedEnum),
+        default=parse_boolean(BookIsPublishedEnum.no),
+        nullable=False
+    )
     category_id = db.Column(db.Integer, db.ForeignKey("category.id"), nullable=False)
     author_id = db.Column(db.Integer, db.ForeignKey("author.id"), nullable=False)
 
