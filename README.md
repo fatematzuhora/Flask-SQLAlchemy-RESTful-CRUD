@@ -8,7 +8,7 @@ In this application we are connecting a MySQL database in a python flask file in
 
 
 ## Getting started
-* At first you'll need to get the source code of the project. Do this by cloning the Flask-SQLAlchemy-RESTful-CRUD repository.
+* At first you'll need to get the source code of the project. Do this by cloning the [Flask-SQLAlchemy-RESTful-CRUD repository](https://github.com/fatematzuhora/Flask-SQLAlchemy-RESTful-CRUD).
 ```
 $ git clone https://github.com/fatematzuhora/Flask-SQLAlchemy-RESTful-CRUD.git
 $ cd Flask-SQLAlchemy-RESTful-CRUD
@@ -46,7 +46,7 @@ SQLALCHEMY_TRACK_MODIFICATIONS=FALSE
 
 ## Running the App
 
-### 1) With Database Migration
+#### 1) With Database Migration
 
 ```
 $ export FLASK_APP=app.py
@@ -71,7 +71,7 @@ $ flask run
 And finally, the application will run on the following URL: http://127.0.0.1:5000
 
 
-### 2) Without Migration
+#### 2) Without Migration
 
 * Simply run the following command, it will create database tables and run the project on the following URL: http://0.0.0.0:8087
 * And the DEBUG mode will be ON
@@ -80,7 +80,7 @@ And finally, the application will run on the following URL: http://127.0.0.1:500
 $ python app.py
 ```
 
-If you want to change the PORT go to the app.py file and edit on the following line of code.
+If you want to change the PORT go to the [app.py](https://github.com/fatematzuhora/Flask-SQLAlchemy-RESTful-CRUD/blob/master/app.py) file and edit on the following line of code.
 ```
 app.run(host='0.0.0.0', port=8087, debug=True)
 ```
