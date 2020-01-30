@@ -10,6 +10,7 @@ def generate_uuid():
     return str(uuid4())
 
 
+# enum choice class for is_published field in book model
 class BookIsPublishedEnum(enum.Enum):
     yes = True
     no = False
@@ -34,7 +35,7 @@ class Book(db.Model):
     is_published = db.Column(
         db.Boolean(),
         ChoiceType(BookIsPublishedEnum),
-        default=parse_boolean(BookIsPublishedEnum.no),
+        default=False,
         nullable=False
     )
     category_id = db.Column(db.Integer, db.ForeignKey("category.id"), nullable=False)
