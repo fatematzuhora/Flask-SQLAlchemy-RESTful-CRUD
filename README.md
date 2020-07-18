@@ -175,7 +175,7 @@ PATCH /category/:id
 **Parameters**
 Name|Type|Description|Required
 :-:|:-:|:-:|:-:
-`name`|`string`|category name|`True`
+`name`|`string`|category name|`False`
 `short_desc`|`string`|category short description|`False`
 
 #### 5. Delete Category
@@ -280,7 +280,7 @@ PATCH /author/:id
 **Parameters**
 Name|Type|Description|Required
 :-:|:-:|:-:|:-:
-`name`|`string`|author name|`True`
+`name`|`string`|author name|`False`
 `about`|`string`| short description about author|`False`
 
 #### 10. Delete Author
@@ -402,10 +402,10 @@ PATCH /book/:uuid
 **Parameters**
 Name|Type|Description|Required
 :-:|:-:|:-:|:-:
-`name`|`string`|book name|`True`
-`tagline`|`string`|book tagline|`True`
-`category_id`|`int`|category id of book|`True`
-`author_id`|`int`|author id of book|`True`
+`name`|`string`|book name|`False`
+`tagline`|`string`|book tagline|`False`
+`category_id`|`int`|category id of book|`False`
+`author_id`|`int`|author id of book|`False`
 `is_published`|`boolean`| status of book|`False`
 `short_desc`|`string`| short description of book|`False`
 
