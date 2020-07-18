@@ -84,3 +84,342 @@ If you want to change the PORT go to the [app.py](https://github.com/fatematzuho
 ```
 app.run(host='0.0.0.0', port=8087, debug=True)
 ```
+
+
+## API Documentation
+
+#### 1. Create Category
+
+**Request**
+```
+POST /category
+```
+
+**Parameters**
+Name|Type|Description|Required
+:-:|:-:|:-:|:-:
+`name`|`string`|category name|`True`
+`short_desc`|`string`|category short description|`False`
+
+**Request Body**
+```
+{
+    "name": "Python",
+    "short_desc": "A python programming language blog"
+}
+```
+
+**Response**
+```
+{
+    "data": {
+        "id": 1,
+        "name": "Python",
+        "short_desc": "A python programming language blog"
+    },
+    "message": "New Category Created!",
+    "status": 201
+}
+```
+
+#### 2. Category List
+
+**Request**
+```
+GET /category
+```
+
+**Response**
+```
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Python",
+            "short_desc": "A python programming language blog"
+        },
+        ....
+    ],
+    "message": "All Categories!",
+    "status": 200
+}
+```
+
+#### 3. Category Detail
+
+**Request**
+```
+GET /category/:id
+```
+
+**Response**
+```
+{
+    "data": {
+        "id": 1,
+        "name": "Python",
+        "short_desc": "A python programming language blog"
+    },
+    "message": "Category Info!",
+    "status": 200
+}
+```
+
+#### 4. Update Category
+
+**Request**
+```
+PATCH /category/:id
+```
+
+**Parameters**
+Name|Type|Description|Required
+:-:|:-:|:-:|:-:
+`name`|`string`|category name|`True`
+`short_desc`|`string`|category short description|`False`
+
+#### 5. Delete Category
+
+**Request**
+```
+DELETE /category/:id
+```
+
+**Response**
+```
+{
+    "message": "Category Deleted!",
+    "status": 200
+}
+```
+
+#### 6. Create Author
+
+**Request**
+```
+POST /author
+```
+
+**Parameters**
+Name|Type|Description|Required
+:-:|:-:|:-:|:-:
+`name`|`string`|author name|`True`
+`about`|`string`| short description about author|`False`
+
+**Request Body**
+```
+{
+    "name": "Fatema T. Zuhora",
+    "about": "Full Stack Software Engineer"
+}
+```
+
+**Response**
+```
+{
+    "data": {
+        "about": "Full Stack Software Engineer",
+        "id": 1,
+        "name": "Fatema T. Zuhora"
+    },
+    "message": "New Author Created!",
+    "status": 201
+}
+```
+
+#### 7. Author List
+
+**Request**
+```
+GET /author
+```
+
+**Response**
+```
+{
+    "data": [
+        {
+            "about": "Full Stack Software Engineer",
+            "id": 1,
+            "name": "Fatema T. Zuhora"
+        },
+        ....
+    ],
+    "message": "All Authors!",
+    "status": 200
+}
+```
+
+#### 8. Author Detail
+
+**Request**
+```
+GET /author/:id
+```
+
+**Response**
+```
+{
+    "data": {
+        "about": "Full Stack Software Engineer",
+        "id": 1,
+        "name": "Fatema T. Zuhora"
+    },
+    "message": "Author Info!",
+    "status": 200
+}
+```
+
+#### 9. Update Author
+
+**Request**
+```
+PATCH /author/:id
+```
+
+**Parameters**
+Name|Type|Description|Required
+:-:|:-:|:-:|:-:
+`name`|`string`|author name|`True`
+`about`|`string`| short description about author|`False`
+
+#### 10. Delete Author
+
+**Request**
+```
+DELETE /author/:id
+```
+
+**Response**
+```
+{
+    "message": "Author Deleted!",
+    "status": 200
+}
+```
+
+#### 11. Create Book
+
+**Request**
+```
+POST /book
+```
+
+**Parameters**
+Name|Type|Description|Required
+:-:|:-:|:-:|:-:
+`name`|`string`|book name|`True`
+`tagline`|`string`|book tagline|`True`
+`category_id`|`int`|category id of book|`True`
+`author_id`|`int`|author id of book|`True`
+`short_desc`|`string`| short description of book|`False`
+
+**Request Body**
+```
+{
+    "name": "Code In Python",
+    "tagline": "A python programming language blog!",
+    "category_id": 1,
+    "author_id": 1
+}
+```
+
+**Response**
+```
+{
+    "data": {
+        "author_id": 1,
+        "category_id": 1,
+        "is_published": false,
+        "name": "Code In Python",
+        "short_desc": "",
+        "tagline": "A python programming language blog!",
+        "uuid": "edf5b0e0-7a3b-4ea6-8890-b6bb84d2318f"
+    },
+    "message": "New Book Created!",
+    "status": 201
+}
+```
+
+#### 12. Book List
+
+**Request**
+```
+GET /book
+```
+
+**Response**
+```
+{
+    "data": [
+        {
+            "author_id": 1,
+            "category_id": 1,
+            "is_published": false,
+            "name": "Code In Python",
+            "short_desc": "",
+            "tagline": "A python programming language blog!",
+            "uuid": "edf5b0e0-7a3b-4ea6-8890-b6bb84d2318f"
+        },
+        ....
+    ],
+    "message": "All Books!",
+    "status": 200
+}
+```
+
+#### 13. Book Detail
+
+**Request**
+```
+GET /book/:uuid
+```
+
+**Response**
+```
+{
+    "data": {
+        "author_id": 1,
+        "category_id": 1,
+        "is_published": false,
+        "name": "Code In Python",
+        "short_desc": "",
+        "tagline": "A python programming language blog!",
+        "uuid": "edf5b0e0-7a3b-4ea6-8890-b6bb84d2318f"
+    },
+    "message": "Book Info!",
+    "status": 200
+}
+```
+
+#### 14. Update Book
+
+**Request**
+```
+PATCH /book/:uuid
+```
+
+**Parameters**
+Name|Type|Description|Required
+:-:|:-:|:-:|:-:
+`name`|`string`|book name|`True`
+`tagline`|`string`|book tagline|`True`
+`category_id`|`int`|category id of book|`True`
+`author_id`|`int`|author id of book|`True`
+`is_published`|`boolean`| status of book|`False`
+`short_desc`|`string`| short description of book|`False`
+
+#### 15. Delete Book
+
+**Request**
+```
+DELETE /book/:uuid
+```
+
+**Response**
+```
+{
+    "message": "Book Deleted!",
+    "status": 200
+}
+```
