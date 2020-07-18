@@ -6,8 +6,6 @@ from app.schema import author_schema, authors_schema, book_schema, books_schema,
 from flask import request, jsonify, make_response
 
 
-
-
 """
 ===========================
 endpoints for Category CRUD

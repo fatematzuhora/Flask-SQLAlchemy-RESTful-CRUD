@@ -4,17 +4,14 @@ from sqlalchemy_utils import ChoiceType
 from uuid import uuid4
 import datetime, enum
 
-
 # method to generate uuid
 def generate_uuid():
     return str(uuid4())
-
 
 # enum choice class for is_published field in book model
 class BookIsPublishedEnum(enum.Enum):
     yes = True
     no = False
-
 
 
 """
